@@ -51,6 +51,12 @@ static inline void update_canvas(Canvas* c) {
     XFlush(c->display);
 }
 
+static inline void fill_canvas(Canvas* c, uint32_t colour) {
+    for (size_t i = 0; i < c->width * c->height; i++) {
+        c->buffer[i] = colour;
+    }
+}
+
 static inline void close_canvas(Canvas* c) {
     XDestroyImage(c->ximage);
     XDestroyWindow(c->display, c->window);

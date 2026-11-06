@@ -3,5 +3,6 @@
 #define UTILS_H
 
 #include "canvas.h"
+#include "draw.h"
 
 #endif
